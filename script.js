@@ -78,12 +78,45 @@ document.querySelector('.scroll-button2').addEventListener('click', function() {
     smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
 });
 
-document.querySelector('.navbut1, .navbut2, .navbut3').addEventListener('click', function() {
+document.querySelector('.navbut1').addEventListener('click', function() {
     const section = document.getElementById('section3');
     section.scrollIntoView({
         behavior: 'smooth', // Smooth scrolling effect
         block: 'start' // Aligns the top of the section to the top of the viewport
     });
+
+    // Adjust the scroll position by adding an offset (e.g., -850)
+    const offset = -600; // Adjust this value as needed
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY; // Get the current top position of the section
+    smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
+});
+
+document.querySelector('.navbut2').addEventListener('click', function() {
+    const section = document.getElementById('section3');
+    section.scrollIntoView({
+        behavior: 'smooth', // Smooth scrolling effect
+        block: 'start' // Aligns the top of the section to the top of the viewport
+    });
+
+    // Adjust the scroll position by adding an offset (e.g., -850)
+    const offset = -600; // Adjust this value as needed
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY; // Get the current top position of the section
+    smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
+});
+
+document.querySelector('.navbut3').addEventListener('click', function() {
+    const section = document.getElementById('section3');
+    section.scrollIntoView({
+        behavior: 'smooth', // Smooth scrolling effect
+        block: 'start' // Aligns the top of the section to the top of the viewport
+    });
+
+    // Adjust the scroll position by adding an offset (e.g., -850)
+    const offset = -600; // Adjust this value as needed
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY; // Get the current top position of the section
+    smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
+});
+
 
     // Adjust the scroll position by adding an offset (e.g., -850)
     const offset = -600; // Adjust this value as needed
