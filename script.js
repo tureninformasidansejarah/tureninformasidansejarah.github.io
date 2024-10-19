@@ -117,13 +117,6 @@ document.querySelector('.navbut3').addEventListener('click', function() {
     smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
 });
 
-
-    // Adjust the scroll position by adding an offset (e.g., -850)
-    const offset = -600; // Adjust this value as needed
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY; // Get the current top position of the section
-    smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
-});
-
 document.querySelector('.square-button1').addEventListener('click', function() {
     const section = document.getElementById('section4');
     section.scrollIntoView({
