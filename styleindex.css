@@ -462,6 +462,7 @@ body::-webkit-scrollbar {
         color: #dde6ed; /* Warna judul */
         font-size: calc(0.8*120px); /* Ukuran font judul */
         margin-left: 100px;
+        margin-top: -100px;
     }
 
     .judul2 {
@@ -663,7 +664,7 @@ body::-webkit-scrollbar {
 .turiantapada_h1 {
     font-family: 'Comforter', cursive;
     font-size: calc(0.8*100px);
-    margin-top: 100px;
+    margin-top: 0px;
     margin-left: 100px;
     color: #dde6ed;
     transform: translateY(100px);
@@ -676,7 +677,7 @@ body::-webkit-scrollbar {
     font-size: calc(0.8*30px);
     margin-left: 100px;
     color: #dde6ed;
-    margin-top: 100px;
+    margin-top: 50px;
     transform: translateY(100px);
     opacity: 0;
     /* Add animation delay for the paragraph */
