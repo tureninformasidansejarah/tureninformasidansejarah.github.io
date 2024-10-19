@@ -1,8 +1,8 @@
         function autoScroll() {
             setTimeout(() => {
-                window.scrollBy(0, 5); // Scroll down by 1px
+                window.scrollBy(0, 5);
                 console.log("Auto scroll executed"); // Debugging log
-            }, 100); // 1000 milliseconds = 1 second delay
+            }, 500);
         }
 // Start auto scroll after loading
 window.addEventListener('load', autoScroll);
