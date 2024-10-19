@@ -78,7 +78,7 @@ document.querySelector('.scroll-button2').addEventListener('click', function() {
     smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
 });
 
-document.querySelector('.navtosection').addEventListener('click', function() {
+document.querySelector('.navbut1, .navbut2, .navbut3').addEventListener('click', function() {
     const section = document.getElementById('section3');
     section.scrollIntoView({
         behavior: 'smooth', // Smooth scrolling effect
