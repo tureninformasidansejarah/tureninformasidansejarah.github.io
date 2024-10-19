@@ -1,0 +1,872 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scale: 1;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background-color: #2c3333;
+    overflow: -moz-scrollbars-none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+ 
+@media screen and (min-width:1000px){
+
+    header {
+        position: absolute; /* Menempatkan header di atas parallax */
+        top: 0;/* Mengatur posisi ke atas */
+        left: 0;
+        right: 0; /* Memastikan lebar memenuhi */
+        z-index: 10; /* Agar tetap di atas layer lainnya */
+        display: flex;
+        justify-content: center; /* Memindahkan menu ke tengah */
+        gap: 40px; /* Jarak antar menu */
+        padding: 20px 0; /* Padding di atas dan bawah */
+    }
+    
+    .navigation {
+        display: flex;
+        margin: 100px;
+    }
+     
+    .navigation a {
+        text-decoration: none;
+        z-index: 10;
+        display: flex;
+        padding: 10px 20px;
+        margin: 0 20px;
+        border-radius: 15px;
+        background: rgba (255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        transition: background 0.3s;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: calc(0.8*20px);
+    }
+    
+    .navigation a:hover {
+        background:rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Kontainer parallax */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: -100px; /* Original margin */
+    height: 300vh; /* Original height */
+}
+
+/* Button style */
+.scroll-button1 {
+    position: absolute;
+    left: 49%; /* Center horizontally */
+    top: 25%; /* Adjust this value to position vertically */
+    transform: translate(-50%, -50%); /* Center the button */
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: calc(0.8*16px);
+    font-weight: bold;
+    color: #333; /* Text color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 10; /* Ensure it appears above other layers */
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.scroll-button1:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly grow the button on hover */
+}
+
+.scroll-button2 {
+    position: absolute;
+    left: 50%; /* Center horizontally */
+    top: 110%; /* Adjust this value to position vertically */
+    transform: translate(-50%, -50%); /* Center the button */
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: calc(0.8*16px);
+    font-weight: bold;
+    color: #333; /* Text color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 10; /* Ensure it appears above other layers */
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.scroll-button2:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly grow the button on hover */
+}
+
+    
+    /* Gaya untuk layer gambar */
+    .parallax-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        will-change: transform; /* Menambah performa */
+    }
+    
+    .layer-1 {
+        z-index: 1;
+        top: 0; /* Matahari */
+    }
+    
+    .layer-2 {
+        z-index: 2;
+        top: 0; /* Pemandangan */
+    }
+    
+    .layer-3 {
+        z-index: 3;
+        top: 0; /* Pendaki */
+    }
+    
+    .layer-4 {
+        z-index: 4;
+        top: 0; /* Pendaki */
+    }
+    
+    .layer-5 {
+        z-index: 5;
+        top: 0; /* Pendaki */
+    }
+    
+    .section3 {
+        position: relative;
+        margin: 0;
+        top: 0;
+        height: 50vh;
+    }
+    
+    .content_3 {
+        text-align: center;
+        background-color: #2c3333;
+        position: relative;
+        bottom: 650px;
+        z-index: 10;
+    }
+    
+    .content_3 h2 {
+        position: relative;
+        color: black;
+        font-size: calc(0.8*50px);
+        padding-top: 100px;
+    }
+    
+    .content_3 p {
+        position: relative;
+        padding-top: 20px;
+        font-size: calc(0.8*20px);
+    }
+    
+    .Shape {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10%; 
+        padding-right: 10%;
+        transform: translateY(50px);
+        position: relative;
+        margin-top: 100px;
+    }
+    
+    .Square, .Square_1, .Square_2 {
+        height: 450px;
+        width: 450px;
+        margin-top: -5vh;
+        background-color: #555;
+        border-radius: 20px;
+        position: relative; /* Ensure the element is positioned correctly */
+        overflow: hidden; /* Keep content within the square */
+        opacity: 0;
+        transition: opacity 2.5s ease-out, transform 1.5s ease-out;
+        transform: translateY(0);
+    }
+    
+    .Square.visible, .Square_1.visible, .Square_2.visible {
+        opacity: 1;
+        transform: translateY(-10px); /* Move upwards */
+    }
+    
+    .Square.hidden, .Square_1.hidden, .Square_2.hidden {
+        transition: none; /* Disable transitions */
+        opacity: 0;
+        transform: translateY(0); /* Reset position */
+    }
+    
+    
+    .square-button1, .square-button2, .square-button3 {
+        background-color: transparent;
+        border: none;
+        height: 50px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 700;
+        cursor: pointer;
+        top: 85%;
+        position: absolute; /* Memposisikan tombol di dalam square */
+        bottom: 20px; /* Jarak dari bawah square */
+        left: 50%; /* Memposisikan dari kiri */
+        transform: translateX(-50%); /* Menggeser tombol ke tengah */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: calc(0.8*20px);
+    }
+
+    .square-button4, .square-button5, .square-button6 {
+        background-color: transparent;
+        border: none;
+        height: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+        height: 80px;
+        border-radius: 5px;
+        cursor: pointer;
+        top: 88%;
+        position: absolute; /* Memposisikan tombol di dalam square */
+        bottom: 20px; /* Jarak dari bawah square */
+        left: 46%; /* Memposisikan dari kiri */
+        transform: translateX(-50%); /* Menggeser tombol ke tengah */
+        opacity: 0;
+        transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease-out;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: calc(0.8*40px);
+    }
+    
+    .square-button7 {
+        background-color: transparent;
+        border: none;
+        height: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+        height: 80px;
+        border-radius: 5px;
+        cursor: pointer;
+        top: 55%;
+        position: relative ; /* Memposisikan tombol di dalam square */
+        bottom: 20px; /* Jarak dari bawah square */
+        left: 20%; /* Memposisikan dari kiri */
+        transform: translateX(-50%); /* Menggeser tombol ke tengah */
+        opacity: 1;
+        transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease-out;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: calc(0.8*40px);
+    }
+
+    @keyframes shake {
+        0% { transform: translate(-50%, 0); }
+        25% { transform: translate(-50%, -2px); }
+        50% { transform: translate(-50%, 2px); }
+        75% { transform: translate(-50%, -2px); }
+        100% { transform: translate(-50%, 0); }
+    }
+    
+    .square-button1:hover, .square-button2:hover, .square-button3:hover{
+        background-color: #ffffff; /* Efek hover */
+        color: black;
+        animation: shake 1s ease-in-out infinite; /* Apply shake animation with infinite loop */
+    }
+
+    .square-button4:hover, .square-button5:hover, .square-button6:hover {
+        background-color: #ffffff; /* Efek hover */
+        color: black;
+        opacity: 1;
+        animation: shake 1s ease-in-out infinite; /* Apply shake animation with infinite loop */
+    }
+        
+    .square-button7:hover{
+        background-color: #ffffff; /* Efek hover */
+        color: black;
+        animation: shake 1s ease-in-out infinite; /* Apply shake animation with infinite loop */
+    }
+
+    .fade-overlay1, .fade-overlay2, .fade-overlay3 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent, rgb(14, 14, 14) 40%); /* Initial gradient */
+        z-index: 1; /* Ensure it's above the image */
+        pointer-events: none; /* Allow clicks to pass through */
+        transition: top 0.5s ease-out; 
+    }
+    
+    .fade-overlay1.hovered, .fade-overlay2.hovered, .fade-overlay3.hovered {
+        top: 40%; /* Gradient when hovered */
+    }
+    
+    .text-overlay1, .text-overlay2, .text-overlay3 {
+        position: absolute; /* Position it within the square */
+        top: 78%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust to center */
+        font-weight: 700;
+        color: #fff; /* Text color */   
+        font-size: calc(0.8*60px); /* Adjust font size */
+        text-align: center; /* Center text */
+        z-index: 2; /* Ensure it's above the overlay */
+        transition: font-size 0.5s ease-out, top 0.5s ease-out; /* Fixed duration */
+    }
+    
+    .text-overlay1.hovered, .text-overlay2.hovered, .text-overlay3.hovered {
+        font-size: calc(0.8*70px);
+        top: 73%;
+    }
+
+    .desc-overlay1, .desc-overlay2, .desc-overlay3 {
+        position: absolute; /* Position it within the square */
+        top: 75%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust to center */
+        color: #fff; /* Text color */   
+        font-size: calc(0.8*20px); /* Adjust font size */
+        font-weight: 400;
+        text-align: center; /* Center text */
+        z-index: 20; /* Ensure it's above the overlay */
+        transition: opacity 0.5s ease-out, top 0.5s ease-out; /* Fixed duration */
+        opacity: 0;
+    }
+    
+    .desc-overlay1.hovered, .desc-overlay2.hovered, .desc-overlay3.hovered {
+        opacity: 1;
+        top: 60%;
+    }
+    
+
+    .text-title {
+        position: absolute; /* Position it within the square */
+        top: 75%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust to center */
+        color: #fff; /* Text color */
+        font-size: calc(0.8*40px); /* Adjust font size */
+        text-align: center; /* Center text */
+        z-index: 2; /* Ensure it's above the overlay */
+        transition: font-size 0.5s ease-out; /* Smooth transition for background */
+    }
+    
+    .green-box {
+        width: 100%; /* Span full width */
+        height: 300px; /* Set desired height */
+        background-color: #2e4f4f; /* Hex color */
+        position: absolute; /* Position it absolutely */
+        top: 70%; /* Position vertically (adjust as needed) */
+        left: 0; /* Align to the left */
+        z-index: 0; /* Place behind other elements */
+        border-radius: 30px;
+    }    
+
+    .green-box-head {
+        width: 100%; /* Span full width */
+        height: 25vh; /* Set desired height */
+        background-color: #2e4f4f; /* Hex color */
+        position: absolute; /* Position it absolutely */
+        top: 0%; /* Position vertically (adjust as needed) */
+        left: 0; /* Align to the left */
+        z-index: 0; /* Place behind other elements */
+        border-radius: 30px;
+    }    
+
+    .header1 {
+        text-align: center;
+        background-color: #2c3333;
+        height: 20vh; /* Konten setelah parallax */
+        position: relative;
+        bottom: 850px;
+        z-index: 10;
+    }
+    
+    .header1 h2 {
+        color: black;
+        font-size: calc(0.8*70px);
+        padding-top: 50px;
+    }
+    
+    .header1 p {
+        padding-top: 20px;
+        font-size: calc(0.8*20px);
+    }
+    
+    .content_1 {
+        text-align: center;
+        background-color: #2c3333;
+        height: 120vh; /* Tinggi konten */
+        position: relative;
+        bottom: 850px;
+        z-index: 10;
+    }
+    
+    .container_hori1 {
+        display: flex; /* Layout horizontal */
+        align-items: flex-start; /* Pastikan semua elemen berada di atas */
+    }
+
+    .container_hori1_sec5 {
+        display: flex; /* Layout horizontal */
+        align-items: flex-start; /* Pastikan semua elemen berada di atas */
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 1.5s ease-out, transform 1s ease-out;
+    }
+
+    .container_hori1_sec5.visible{
+        opacity: 1;
+        transform: translateY(50px);
+        transition: opacity 1.5s ease-out, transform 1s ease-out;
+    }
+
+    .container_hori1_sec5.hidden{
+        opacity: 0;
+        transform: translateY(100px);
+        transition: none;
+    }
+    
+    .container_verti1 {
+        display: flex;
+        flex-direction: column; /* Elemen di dalamnya ditata secara vertikal */
+        width: 50%; /* Atur lebar kontainer vertikal */
+        margin-right: 20px; /* Ruang antara kontainer vertikal dan trapesium */
+    }
+    
+    .judul1 {
+        text-align: left; /* Judul rata kiri */
+        margin-bottom: 10px; /* Ruang di bawah judul */
+        margin-top: 200px;
+    }
+    
+    .judul1 h1 {
+        color: #dde6ed; /* Warna judul */
+        font-size: calc(0.8*120px); /* Ukuran font judul */
+        margin-left: 100px;
+    }
+
+    .judul2 {
+        text-align: left; /* Judul rata kiri */
+        margin-bottom: 10px; /* Ruang di bawah judul */
+        margin-top: 100px;
+    }
+    
+    .judul2 h1 {
+        color: #dde6ed; /* Warna judul */
+        font-size: calc(0.8*120px); /* Ukuran font judul */
+        margin-right: 80px;
+        margin-top: -5vh;
+        text-align: right;
+    }
+    
+    .slider {
+        position: relative;
+        width: 90%; /* Atur lebar slider sesuai kontainer */
+        margin-left: 100px;
+        height: 300px;
+        margin-top: -25%;
+    }
+    
+    
+    .slide {
+        display: none; /* Sembunyikan semua slide */
+        padding: 20px;
+        font-size: calc(0.8*20px);
+        color: white;
+        text-align: left;
+        word-spacing: 10px;
+    }
+    
+    .slide.active {
+        display: block; /* Tampilkan slide aktif */
+        font-size: calc(0.8*30px);
+        font-weight: normal; /* Use normal as an alternative */
+        margin: 50px;
+    }
+    
+    
+    
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .prev {
+        left: 10px; /* Posisi tombol kiri */
+    }
+    
+    .next {
+        right: 10px; /* Posisi tombol kanan */
+    }
+
+    .indicators {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    
+    .active-dot {
+        background-color: #717171;
+    }
+    
+.trapezium_Container {
+    position: relative; /* Posisi relatif untuk trapesium */
+    width: 50vw; /* Setengah lebar layar */
+    scale: 1.1;
+    margin-top: 6vh;
+    height: 120vh; /* Tinggi kontainer trapesium */
+    overflow: hidden; /* Menyembunyikan bagian yang melampaui */
+    z-index: 5; /* Agar trapesium di belakang konten */
+}
+
+.trapesium_kiri {
+    border-bottom: 950px solid transparent; /* Tinggi trapesium yang lebih besar */
+    border-left: 300px solid transparent; /* Lebar trapesium yang lebih besar */
+    height: 0;
+    width: 50vw; /* Lebar trapesium */
+    position: absolute;
+    left: 120px; /* Left position of the trapezoid */
+    background-size: cover; /* Mengatur ukuran gambar untuk menutupi seluruh area */
+    background-position: center; /* Menempatkan gambar di tengah */
+    z-index: -1; /* Menempatkan gambar di belakang trapesium */
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    transform: translateX(-10%); /* Move the entire trapezoid shape to the left */
+}
+
+.trapesium_kiri img {
+    width: 100%; /* Set the width to 100% */
+    height: auto; /* Maintain aspect ratio */ /* Adjust the points for the trapezoid */
+    position: absolute; /* Allow positioning inside the trapezoid */
+    left: -50%; /* Align image to the left */
+}
+
+.content_2 {
+    text-align: center;
+    background-color: #2c3333;
+    height: 170vh; /* Tinggi konten */
+    position: relative;
+    margin-top: -130vh;
+    z-index: 10;
+}
+.trapezium_Container2 {
+    position: relative; /* Posisi relatif untuk trapesium */
+    width: 60vw; /* Setengah lebar layar */
+    height: 155vh; /* Tinggi kontainer trapesium */
+    margin-left: -1.5vw;
+    overflow: hidden; /* Menyembunyikan bagian yang melampaui */
+    z-index: 5; /* Agar trapesium di belakang konten */
+}
+
+.trapesium_kanan {
+    border-bottom: 950px solid transparent; /* Tinggi trapesium yang lebih besar */
+    border-left: 0px solid transparent; /* Lebar trapesium yang lebih besar */
+    height: 120vh;
+    width: 50vw; /* Lebar trapesium */
+    position: absolute;
+    left: 120px; /* Left position of the trapezoid */
+    background-size: cover; /* Mengatur ukuran gambar untuk menutupi seluruh area */
+    background-position: center; /* Menempatkan gambar di tengah */
+    z-index: -1; /* Menempatkan gambar di belakang trapesium */
+    clip-path: polygon(0 0, 70% 0, 112% 100%, 0% 100%);
+    transform: translateX(-10%); /* Move the entire trapezoid shape to the left */
+}
+
+.trapesium_kanan img {
+    width: 100%; /* Set the width to 100% */
+    height: auto; /* Maintain aspect ratio */ /* Adjust the points for the trapezoid */
+    position: absolute; /* Allow positioning inside the trapezoid */
+    left: -50%; /* Align image to the left */
+}
+    
+.deskturenpendidikan {
+    display: block; /* Tampilkan slide aktif */
+    font-size: calc(0.8*25px);    
+    font-weight: 10; /* Use normal as an alternative */
+    margin: 50px;
+    text-align: right;
+    color: #dde6ed;
+}
+
+.section4{
+    top: -50vh;
+}
+
+.content_4{
+    background-color: #2c3333;
+    margin-top: -200px;
+    
+}
+
+.gambarturiantapada{
+    background-color: #2c3333;
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.gambarturiantapada img{
+    max-width: 21vw;
+    margin-left: 10vw;
+    border-radius: 40px;
+}
+
+.gambarturiantapada.visible{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.gambarturiantapada.hidden{
+    transform: translateX(-200);
+    opacity: 0;
+    transition: none;
+}
+
+.turiantapada {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.turiantapada_h1 {
+    font-family: 'Comforter', cursive;
+    font-size: calc(0.8*100px);
+    margin-top: 100px;
+    margin-left: 100px;
+    color: #dde6ed;
+    transform: translateY(100px);
+    opacity: 0;
+    /* Add specific animation for the header */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.turiantapada_p {
+    font-size: calc(0.8*30px);
+    margin-left: 100px;
+    color: #dde6ed;
+    margin-top: 100px;
+    transform: translateY(100px);
+    opacity: 0;
+    /* Add animation delay for the paragraph */
+    transition: transform 1s ease-out 0.5s, opacity 1s ease-out 0.5s; /* 0.5s delay */
+}
+
+/* Make the header and paragraph appear separately */
+.turiantapada_h1.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.turiantapada_p.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.turiantapada_h1.hidden {
+    transition: none;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.turiantapada_p.hidden {
+    transition: none;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.content5{
+    margin-top: 100px;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    position: absolute; /* Position it absolutely */
+
+}
+
+.greenboxbg1{
+    width: 100%; /* Span full width */
+    margin-top: 10vh;
+    height: 80vh; /* Set desired height */
+    background-color: #2e4f4f; /* Hex color */
+    top: 70%; /* Position vertically (adjust as needed) */
+    left: 0; /* Align to the left */
+    z-index: 0; /* Place behind other elements */
+    border-radius: 30px;
+}
+
+.title_wisata{
+    padding-top: 5vh;
+    text-align: center;
+    color: #dde6ed;
+    font-weight: 700;
+    font-size: calc(0.8*70px);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+.title_wisata.visible{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.title_wisata.hidden{
+    transition: none;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.keterangan_wisata {
+    text-align: center;
+    color: #dde6ed;
+    margin-top: 30px;
+    font-size: calc(0.8*30px);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+.keterangan_wisata.visible{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.keterangan_wisata.hidden{
+    transition: none;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.box_boon, .box_tiban, .box_godeg{
+    height: 400px;
+    width: 450px;
+    margin-top: -5vh;
+    background-color: #555;
+    border-radius: 20px;
+    position: relative; /* Ensure the element is positioned correctly */
+    overflow: hidden; /* Keep content within the square */
+    z-index: 5;
+}
+
+
+.content6{
+    margin-top: 120vh;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+.greenboxbg2{
+    width: 100%; /* Span full width */
+    margin-top: 30vh;
+    height: 40vh; /* Set desired height */
+    background-color: #2e4f4f; /* Hex color */
+    top: 70%; /* Position vertically (adjust as needed) */
+    left: 0; /* Align to the left */
+    z-index: 0; /* Place behind other elements */
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateY(100px);
+}
+
+.greenboxbg2.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.greenboxbg2.hidden{
+    transition: none;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.box_lumba, .box_kuda{
+    height: 400px;
+    width: 500px;
+    margin-top: -200px;
+    background-color: #555;
+    border-radius: 20px;
+    position: absolute; /* Ensure the element is positioned correctly */
+    overflow: hidden; /* Keep content within the square */
+    z-index: 5;
+}
+
+.title_umkm{
+    padding-top: 5vh;
+    text-align: center;
+    color: #dde6ed;
+    font-size: calc(0.8*70px);
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+.title_umkm.visible{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.title_umkm.hidden{
+    transition: none;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.keterangan_umkm {
+    text-align: center;
+    color: #dde6ed;
+    font-size: calc(0.8*30px);
+    opacity: 0;
+    margin-top: 20px;
+    transform: translateY(100px);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+.keterangan_umkm.visible{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.keterangan_umkm.hidden{
+    transition: none;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+
+}
+ 
