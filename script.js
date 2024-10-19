@@ -12,6 +12,41 @@ window.addEventListener('load', () => {
     document.getElementById('loadingScreen').style.display = 'none';
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.parallax-layer');
+    const totalImages = images.length;
+    let loadedImages = 0;
+
+    // Function to hide the loading screen
+    function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.classList.add('hidden');
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500); // Fade-out effect
+    }
+
+    // Check when each image is loaded
+    images.forEach(image => {
+        const img = new Image();
+        img.src = image.src;
+
+        img.onload = function() {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                hideLoadingScreen();
+            }
+        };
+
+        img.onerror = function() {
+            // Handle error loading image
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                hideLoadingScreen();
+            }
+        };
+    });
+});
 
 
 // Smooth scroll to the next section when the button is clicked
@@ -55,7 +90,6 @@ document.querySelector('.navtosection').addEventListener('click', function() {
     const sectionTop = section.getBoundingClientRect().top + window.scrollY; // Get the current top position of the section
     smoothScrollTo(sectionTop + offset, 2000); // Set duration to 2000ms (2 seconds)
 });
-
 
 document.querySelector('.square-button1').addEventListener('click', function() {
     const section = document.getElementById('section4');
