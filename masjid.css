@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2c3333;
+}
+
+.wrapper {
+    width: auto;
+    height: 100% ;
+    position: relative;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    pointer-events: none;
+    top: 25px;
+    margin-left: 140px;
+    position: relative;
+    text-decoration:none;
+}
+
+.menu {
+    margin-left: auto;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    line-height: 20px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    color: white;
+    z-index: 1;
+    background-color: #2e4f4f;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-left: 750px ;
+    margin-bottom: 20px;
+    padding: 0;
+    display: flex;
+    bottom: 35px;
+
+}
+
+nav ul li {
+    float:left;
+}
+
+nav ul li a {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 20px;
+}
+
+.container img {
+    width: 100%; 
+    margin-right: 20px;
+    position: absolute;
+}
+.content_1 {
+    flex: 1;
+    max-width: 90%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    background-image: url(bag\ masjid\ tiban.png);
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+}
+
+.square {
+    width: 50%;
+    padding-top: 50%;
+    position: relative;
+    overflow: hidden;
+    margin-left: -20px;
+}
+
+.square img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.deskripsi {
+    flex: 1; /* Membuat deskripsi mengambil sisa ruang yang tersedia */
+    color: white;
+    text-align: center;
+    margin-top: 250px;
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+.button-container {
+    display: flex; /* Mengatur kontainer menjadi fleksibel */
+    justify-content: center; /* Memusatkan button */
+    margin-top: 10px; /* Jarak antara deskripsi dan button */
+}
+
+.button {
+    margin: 30px;/* Jarak antar button */
+    background-color: transparent; /* Menghilangkan background */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    position: relative; /* Untuk animasi */
+    overflow: visible; /* Ubah menjadi visible untuk memastikan gambar tidak tersembunyi */
+    transition: transform 0.2s; /* Transisi untuk efek pop-up */
+    width: 150px; /* Atur lebar tombol */
+    height: 330px; /* Atur tinggi tombol */
+}
+
+.button img {
+    width: 100%; /* Mengatur lebar gambar agar mengisi tombol */
+    height: 100px; /* Memastikan aspek rasio gambar tetap */
+    filter: grayscale(100%);
+    border-radius: 15px;
+}
+
+.button :hover {
+    transform: translateY(-15px); /* Efek pop-up saat aktif */
+    filter: grayscale(0%);
+}
